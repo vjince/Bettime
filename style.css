@@ -1,21 +1,16 @@
-.delete-btn {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 5px 10px;
-    cursor: pointer;
-    margin-left: 15px;
-    font-size: 0.8rem;
-}
-
-.delete-btn:hover {
-    background-color: #cc0000;
-}
-
-/* Zorgt dat de winst en de knop netjes rechts staan */
-.rechts-box {
+/* Voeg dit toe aan je style.css voor een betere layout */
+.row {
     display: flex;
-    align-items: center;
     gap: 10px;
+}
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+label {
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+    color: #e94560;
+    font-weight: bold;
 }
