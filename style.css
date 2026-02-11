@@ -1,62 +1,21 @@
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #1a1a2e;
-    color: white;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-}
-
-.container {
-    background: #16213e;
-    padding: 30px;
-    border-radius: 12px;
-    width: 100%;
-    max-width: 450px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.formulier {
-    display: flex;
-    flex-direction: column;
-    gap: 12px; /* Ruimte tussen de hokjes */
-    margin-bottom: 20px;
-}
-
-input {
-    padding: 12px;
-    border-radius: 6px;
-    border: 1px solid #0f3460;
-    background: #0f3460;
-    color: white;
-    font-size: 1rem;
-}
-
-button {
-    padding: 15px;
-    background-color: #e94560;
+.delete-btn {
+    background-color: #ff4d4d;
     color: white;
     border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-button:hover { background-color: #ff4d6d; }
-
-ul { list-style: none; padding: 0; }
-
-li {
-    background: #1a1a2e;
-    margin-bottom: 10px;
-    padding: 15px;
-    border-left: 5px solid #4ee44e;
     border-radius: 4px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 15px;
+    font-size: 0.8rem;
 }
 
-.info { font-size: 0.85rem; color: #aaa; }
-.winst { color: #4ee44e; font-weight: bold; }
+.delete-btn:hover {
+    background-color: #cc0000;
+}
+
+/* Zorgt dat de winst en de knop netjes rechts staan */
+.rechts-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
