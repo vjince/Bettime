@@ -9,15 +9,22 @@
 
     <div class="container">
         <h1>Bet Tracker 📈</h1>
-        <p>Houd je weddenschappen overzichtelijk bij.</p>
 
-        <button id="start-invullen" class="hoofd-knop">Nieuwe Weddenschap Invoeren</button>
+        <div class="formulier">
+            <input type="text" id="wedstrijd" placeholder="Welke wedstrijd?">
+            <input type="text" id="dag" placeholder="Welke dag? (bijv. Zaterdag)">
+            <input type="time" id="tijd">
+            <input type="text" id="bookmaker" placeholder="Welke bookmaker?">
+            <input type="number" id="inzet" placeholder="Inzet (€)" step="0.01">
+            <input type="number" id="odds" placeholder="Odds (bijv. 1.80)" step="0.01">
+
+            <button id="voeg-toe">Weddenschap Opslaan</button>
+        </div>
 
         <hr>
 
         <h2>Mijn Weddenschappen</h2>
-        <ul id="bet-lijst">
-            </ul>
+        <ul id="bet-lijst"></ul>
     </div>
 
     <script src="script.js"></script>

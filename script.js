@@ -1,40 +1,39 @@
-const startKnop = document.getElementById('start-invullen');
+const knop = document.getElementById('voeg-toe');
 const lijst = document.getElementById('bet-lijst');
 
-startKnop.addEventListener('click', function() {
-    // De vragen die de app aan je stelt
-    const wedstrijd = prompt("Welke wedstrijd is het?");
-    if (!wedstrijd) return; // Stoppen als je op annuleren klikt
+knop.addEventListener('click', function() {
+    // Pak alle waarden uit de invulvelden
+    const wedstrijd = document.getElementById('wedstrijd').value;
+    const dag = document.getElementById('dag').value;
+    const tijd = document.getElementById('tijd').value;
+    const bookmaker = document.getElementById('bookmaker').value;
+    const inzet = document.getElementById('inzet').value;
+    const odds = document.getElementById('odds').value;
 
-    const dag = prompt("Op welke dag is de wedstrijd? (bijv. Maandag of 12 feb)");
-    const tijd = prompt("Hoe laat is de wedstrijd? (bijv. 20:45)");
-    const bookmaker = prompt("Welke bookmaker gebruik je?");
-    const inzet = prompt("Wat is je inzet in Euro's?");
-    const odds = prompt("Wat zijn de odds? (bijv. 1.85)");
-
-    // Controleren of alles is ingevuld
-    if (dag && tijd && bookmaker && inzet && odds) {
-
-        const mogelijkeWinst = (parseFloat(inzet) * parseFloat(odds)).toFixed(2);
-
-        // Het lijst-item maken
-        const li = document.createElement('li');
-        li.innerHTML = `
-            <div>
-                <strong>${wedstrijd}</strong> <br>
-                <span class="details">
-                    📅 ${dag} om ⏰ ${tijd} <br>
-                    🏦 Bookmaker: ${bookmaker} <br>
-                    💰 Inzet: €${inzet} (Odds: ${odds})
-                </span>
-            </div>
-            <div class="winst">€${mogelijkeWinst}</div>
-        `;
-
-        // Toevoegen aan de lijst
-        lijst.appendChild(li);
-
-    } else {
-        alert("Je hebt niet alle vragen beantwoord. De weddenschap is niet opgeslagen.");
+    // Check of alles is ingevuld
+    if (!wedstrijd || !dag || !tijd || !bookmaker || !inzet || !odds) {
+        alert("Vul eerst alle velden in op het blad!");
+        return;
     }
+
+    // Bereken winst
+    const winst = (parseFloat(inzet) * parseFloat(odds)).toFixed(2);
+
+    // Maak het lijstje aan
+    const li = document.createElement('li');
+    li.innerHTML = `
+        <div>
+            <strong>${wedstrijd}</strong> <br>
+            <span class="info">
+                📅 ${dag} om ${tijd} | 🏦 ${bookmaker} <br>
+                Inzet: €${inzet} (Odds: ${odds})
+            </span>
+        </div>
+        <div class="winst">€${winst}</div>
+    `;
+
+    lijst.appendChild(li);
+
+    // Maak de velden weer leeg voor de volgende keer
+    document.querySelectorAll('input').forEach(input => input.value = '');
 });
